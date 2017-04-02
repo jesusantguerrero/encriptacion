@@ -2,10 +2,10 @@
 Proyecto de comunicacion avanzada de datos - Universidad Dominicana OyM
 programa que maneje el concepto de encriptacion
 
-# Descarga
+# Instrucciones
 
-1. Clonar o descargar el repositorio
-2. Descomprime el archivo
+1. Click [Aqui](https://github.com/jesusantguerrero/encriptacion/archive/v0.0.2-uni-project.zip) para descargar el repositorio
+2. Descomprimir el archivo
 3. Abrir el proyecto encriptacion1.sln con Visual Studio y ejecutalo
 4. Hay un archivo .exe en la carpeta ext/ del proyecto 
 
