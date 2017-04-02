@@ -8,6 +8,7 @@ programa que maneje el concepto de encriptacion
 2. Descomprime el archivo
 3. Abrir el proyecto encriptacion1.sln con Visual Studio y ejecutalo
 4. Hay un archivo .exe en la carpeta ext/ del proyecto 
+<<<<<<< HEAD
 
 **El codigo principal es este:** [form principal](encriptacion1/Form1.cs)
 
