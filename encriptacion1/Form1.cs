@@ -21,6 +21,7 @@ namespace encriptacion1
         private string nombre;
         private string contrasenia;
         private string mensaje;
+        private string cifrado = "";
         private List<char> caracteres = new List<char>();
 
 
@@ -84,60 +85,96 @@ namespace encriptacion1
 
         private void encriptar()
         {
-            nombre = txt_nombre.Text;
-            contrasenia = txt_contrasenia.Text;
-            mensaje = rtxt_mensaje.Text;
-
-            for (int i = 0; i < mensaje.Length; i++)
+            if (is_valid())
             {
-                caracteres.Add(mensaje[i]);
+                nombre = txt_nombre.Text;
+                contrasenia = txt_contrasenia.Text;
+                mensaje = rtxt_mensaje.Text;
+
+                for (int i = 0; i < mensaje.Length; i++)
+                {
+                    caracteres.Add(mensaje[i]);
+                    caracteres[i] = Convert.ToChar(caracteres[i] + 1);
+                    cifrado += caracteres[i];
+                }
+
+                mensaje = "";
+
+                borrarCampos();
+                btn_encriptar.Text = "Descifrar";
+                rtxt_mensaje.Text = cifrado;
+                MessageBox.Show("Su mensaje ha sido encriptado para descifrarlo ingrese sus datos y haga click en descifrar");
+
+            }
+            else
+            {
+                MessageBox.Show("llene todo los campos por favor");
             }
 
-            mensaje = "";
-
-            for (int i = 0; i < caracteres.Count; i++)
-            {
-                caracteres[i] = Convert.ToChar(caracteres[i] + 1);
-            }
-
-            for (int i = 0; i < caracteres.Count; i++)
-            {
-                mensaje += caracteres[i];
-            }
-
-
-
-            borrarCampos();
-            btn_encriptar.Text = "Descifrar";
-            rtxt_mensaje.Text = mensaje;
-            mensaje = " ";
         }
 
 
-        void descifrar()
+        private void descifrar()
         {
-            btn_encriptar.Text = "Encriptar";
-
-            for (int i = 0; i < caracteres.Count; i++)
+            if (is_info())
             {
-                caracteres[i] = Convert.ToChar(caracteres[i] - 1);
+                btn_encriptar.Text = "Encriptar";
+
+                for (int i = 0; i < caracteres.Count; i++)
+                {
+                    caracteres[i] = Convert.ToChar(caracteres[i] - 1);
+                    mensaje += caracteres[i];
+                }
+
+                caracteres.Clear();
+                cifrado = "";
+                rtxt_mensaje.Text = mensaje;
+                MessageBox.Show(this, "sr(a) " + nombre + " su mensaje descifrado es '" + mensaje + "'", "Mensaje Descifrado");
+
+            }
+            else
+            {
+                MessageBox.Show("sus datos no corresponden con los que ingresó al entrar el mensaje");
             }
 
-            for (int i = 0; i < caracteres.Count; i++)
-            {
-                mensaje += caracteres[i];
-            }
-
-            caracteres.Clear();
-            rtxt_mensaje.Text = mensaje;
         }
 
-        void borrarCampos()
+
+        private void borrarCampos()
         {
             txt_nombre.Text = "";
             txt_contrasenia.Text = "";
             rtxt_mensaje.Text = "";
         }
 
+        private bool is_valid()
+        {
+            bool result = false;
+            if (txt_nombre.Text != "" && txt_contrasenia.Text != "" && rtxt_mensaje.Text != "")
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
+
+        private bool is_info()
+        {
+            bool result = false;
+            if (txt_nombre.Text == nombre && txt_contrasenia.Text == contrasenia)
+            {
+                result = true;
+            }
+            return result;
+        }
+
+        private void btn_m_info_Click(object sender, EventArgs e)
+        {
+            var info = "Este programa fue realizado por el grupo conformado por: \n \n * Jesus Guerrero \n * Jahiro Manzano,";
+            info += " \n * Ezequiel Williams \n * Tommy suazo \n \n Para una practica de";
+            info += "Comunicacion Avanzada De Datos";
+            MessageBox.Show(info);
+        }
     }
 }

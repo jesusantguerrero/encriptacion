@@ -41,18 +41,20 @@
             this.btn_m_minimaze = new System.Windows.Forms.Button();
             this.btn_m_info = new System.Windows.Forms.Button();
             this.btn_m_close = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.p_headbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_encriptar
@@ -61,13 +63,14 @@
             this.btn_encriptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_encriptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_encriptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Snow;
-            this.btn_encriptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_encriptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_encriptar.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btn_encriptar.ForeColor = System.Drawing.Color.Tomato;
             this.btn_encriptar.Location = new System.Drawing.Point(499, 458);
             this.btn_encriptar.Name = "btn_encriptar";
             this.btn_encriptar.Size = new System.Drawing.Size(129, 42);
-            this.btn_encriptar.TabIndex = 0;
+            this.btn_encriptar.TabIndex = 4;
+            this.btn_encriptar.TabStop = false;
             this.btn_encriptar.Text = "Encriptar";
             this.btn_encriptar.UseVisualStyleBackColor = false;
             this.btn_encriptar.Click += new System.EventHandler(this.btn_encriptar_Click);
@@ -119,10 +122,12 @@
             // rtxt_mensaje
             // 
             this.rtxt_mensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxt_mensaje.Location = new System.Drawing.Point(3, 3);
+            this.rtxt_mensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.rtxt_mensaje.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rtxt_mensaje.Location = new System.Drawing.Point(6, 15);
             this.rtxt_mensaje.Name = "rtxt_mensaje";
-            this.rtxt_mensaje.Size = new System.Drawing.Size(370, 135);
-            this.rtxt_mensaje.TabIndex = 9;
+            this.rtxt_mensaje.Size = new System.Drawing.Size(360, 121);
+            this.rtxt_mensaje.TabIndex = 2;
             this.rtxt_mensaje.Text = "";
             // 
             // txt_contrasenia
@@ -132,7 +137,8 @@
             this.txt_contrasenia.Location = new System.Drawing.Point(5, 8);
             this.txt_contrasenia.Name = "txt_contrasenia";
             this.txt_contrasenia.Size = new System.Drawing.Size(358, 19);
-            this.txt_contrasenia.TabIndex = 10;
+            this.txt_contrasenia.TabIndex = 1;
+            this.txt_contrasenia.UseSystemPasswordChar = true;
             // 
             // btn_cerrar
             // 
@@ -145,7 +151,8 @@
             this.btn_cerrar.Location = new System.Drawing.Point(634, 458);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(129, 42);
-            this.btn_cerrar.TabIndex = 11;
+            this.btn_cerrar.TabIndex = 0;
+            this.btn_cerrar.TabStop = false;
             this.btn_cerrar.Text = "Cerrar";
             this.btn_cerrar.UseVisualStyleBackColor = false;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
@@ -156,7 +163,7 @@
             this.lbl_title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbl_title.ForeColor = System.Drawing.Color.White;
-            this.lbl_title.Location = new System.Drawing.Point(25, 11);
+            this.lbl_title.Location = new System.Drawing.Point(58, 11);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(110, 25);
             this.lbl_title.TabIndex = 12;
@@ -166,6 +173,7 @@
             // p_headbar
             // 
             this.p_headbar.BackColor = System.Drawing.Color.Tomato;
+            this.p_headbar.Controls.Add(this.pictureBox2);
             this.p_headbar.Controls.Add(this.lbl_title);
             this.p_headbar.Controls.Add(this.btn_m_minimaze);
             this.p_headbar.Controls.Add(this.btn_m_info);
@@ -188,6 +196,7 @@
             this.btn_m_minimaze.Name = "btn_m_minimaze";
             this.btn_m_minimaze.Size = new System.Drawing.Size(54, 53);
             this.btn_m_minimaze.TabIndex = 15;
+            this.btn_m_minimaze.TabStop = false;
             this.btn_m_minimaze.Text = "_";
             this.btn_m_minimaze.UseVisualStyleBackColor = false;
             this.btn_m_minimaze.Click += new System.EventHandler(this.btn_m_minimaze_Click);
@@ -204,8 +213,10 @@
             this.btn_m_info.Name = "btn_m_info";
             this.btn_m_info.Size = new System.Drawing.Size(54, 53);
             this.btn_m_info.TabIndex = 14;
+            this.btn_m_info.TabStop = false;
             this.btn_m_info.Text = "?";
             this.btn_m_info.UseVisualStyleBackColor = false;
+            this.btn_m_info.Click += new System.EventHandler(this.btn_m_info_Click);
             // 
             // btn_m_close
             // 
@@ -219,22 +230,10 @@
             this.btn_m_close.Name = "btn_m_close";
             this.btn_m_close.Size = new System.Drawing.Size(59, 53);
             this.btn_m_close.TabIndex = 13;
+            this.btn_m_close.TabStop = false;
             this.btn_m_close.Text = "X";
             this.btn_m_close.UseVisualStyleBackColor = false;
             this.btn_m_close.Click += new System.EventHandler(this.btn_m_close_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.ErrorImage = global::encriptacion1.Properties.Resources._lock;
-            this.pictureBox1.Image = global::encriptacion1.Properties.Resources._lock;
-            this.pictureBox1.InitialImage = global::encriptacion1.Properties.Resources._lock;
-            this.pictureBox1.Location = new System.Drawing.Point(452, 129);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 263);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -245,6 +244,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.panel1.Location = new System.Drawing.Point(2, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(771, 457);
@@ -263,10 +263,10 @@
             // 
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(6, 8);
+            this.txt_nombre.Location = new System.Drawing.Point(6, 7);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(360, 19);
-            this.txt_nombre.TabIndex = 10;
+            this.txt_nombre.TabIndex = 0;
             // 
             // panel3
             // 
@@ -287,6 +287,32 @@
             this.panel2.Size = new System.Drawing.Size(376, 141);
             this.panel2.TabIndex = 6;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.ErrorImage = global::encriptacion1.Properties.Resources.lockpng;
+            this.pictureBox1.Image = global::encriptacion1.Properties.Resources.lockpng;
+            this.pictureBox1.InitialImage = global::encriptacion1.Properties.Resources.lockpng;
+            this.pictureBox1.Location = new System.Drawing.Point(452, 129);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(300, 263);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.ErrorImage = global::encriptacion1.Properties.Resources.lockpng;
+            this.pictureBox2.Image = global::encriptacion1.Properties.Resources.lockpng;
+            this.pictureBox2.InitialImage = global::encriptacion1.Properties.Resources.lockpng;
+            this.pictureBox2.Location = new System.Drawing.Point(14, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
             // F_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,10 +327,10 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "F_principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JEncripter";
             this.p_headbar.ResumeLayout(false);
             this.p_headbar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -312,6 +338,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,6 +366,7 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
